@@ -1,7 +1,6 @@
-class Triangles
+class Triangle
 
   attr_accessor :side1, :side2, :side3
-
 
   def initialize(side1, side2, side3)
     @side1 = side1
@@ -9,24 +8,20 @@ class Triangles
     @side3 = side3
   end
 
-def triangle_check?
- if self.equilateral?
-   return 'Your triangle is an equilateral triangle!'
-elsif self.isosceles?
-  return 'Your triangle is a isosceles triangle!'
-elsif self.scalene?
-  return 'Your triangle is a scalene triangle!'
-else
-  return 'Not a triangle!'
-
-
-
-
-
-
+  def triangle_check?
+    if self.equilateral?
+      return 'Your triangle is an equilateral triangle!'
+    elsif self.isosceles?
+      return 'Your triangle is a isosceles triangle!'
+    elsif self.scalene?
+      return 'Your triangle is a scalene triangle!'
+    elsif self.notatriangle?
+      return 'Not a triangle!'
+    end
+  end
 
   def equilateral?
-    @side1 == @side2 == @side3
+    @side1 == @side2 && @side2 == @side3
   end
 
   def isosceles?
